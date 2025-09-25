@@ -20,9 +20,14 @@ export default defineConfig({
       '/api': {
         target: 'http://194.135.20.4:8080',
         changeOrigin: true,
-        rewrite: (path) => path,
+        rewrite: (path) => path.replace(/^\/api/, ''),
         secure: false,
       },
+      '/competencies': {
+        target: 'http://194.135.20.4:8080',
+        changeOrigin: true,
+        secure: false,
+      }
     },
   },
 })
