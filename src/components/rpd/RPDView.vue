@@ -16,14 +16,14 @@
     <table v-else class="rpd-table">
       <thead>
         <tr>
-          <th>ID</th>
+          <th>№</th>
           <th>Название</th>
           <th>Действия</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="rpd in rpds" :key="rpd.id">
-          <td>{{ rpd.id }}</td>
+        <tr v-for="(rpd, index) in rpds" :key="rpd.id">
+          <td>{{ index + 1 }}</td>
           <td>{{ rpd.disciplineName }}</td>
           <td>
             <button @click="viewRPD(rpd.id)" title="Просмотр">👁️</button>
