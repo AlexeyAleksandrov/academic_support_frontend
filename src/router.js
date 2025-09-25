@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import RPDView from './components/RPDView.vue';
-import RPDDetail from './components/RPDDetail.vue';
-import RPDEdit from './components/RPDEdit.vue';
-import RPDAdd from './components/RPDAdd.vue';
+import RPDView from './components/rpd/RPDView.vue';
+import RPDDetail from './components/rpd/RPDDetail.vue';
+import RPDEdit from './components/rpd/RPDEdit.vue';
+import RPDAdd from './components/rpd/RPDAdd.vue';
 
 // Заглушки для страниц, заменим на реальные компоненты позже
 const CompetenceView = { template: '<div>Компетенции: Просмотр</div>' };
