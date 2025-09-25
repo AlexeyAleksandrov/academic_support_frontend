@@ -159,6 +159,9 @@ export default {
       }
     }
   },
+  created() {
+    console.log('Base URL (RPDEdit):', this.baseUrl);
+  },
   async mounted() {
     await this.fetchCompetencies();
     await this.fetchIndicators();

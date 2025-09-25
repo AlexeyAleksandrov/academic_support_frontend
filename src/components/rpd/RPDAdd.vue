@@ -138,6 +138,9 @@ export default {
       }
     }
   },
+  created() {
+    console.log('Base URL (RPDAdd):', this.baseUrl);
+  },
   async mounted() {
     await this.fetchCompetencies();
     await this.fetchIndicators();
