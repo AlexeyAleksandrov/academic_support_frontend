@@ -61,6 +61,7 @@ export default {
   name: 'RPDAdd',
   data() {
     return {
+      baseUrl: import.meta.env.VITE_API_BASE_URL,
       isLoading: true,
       formData: {
         disciplineName: '',
@@ -74,7 +75,7 @@ export default {
   methods: {
     async fetchCompetencies() {
       try {
-        const url = '/api/competencies';
+        const url = `${this.baseUrl}/api/competencies`;
         const res = await fetch(url);
         
         if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
@@ -89,7 +90,7 @@ export default {
     async fetchIndicators() {
       try {
         const promises = this.competencies.map(comp => 
-          fetch(`/api/competencies/${comp.number}/indicators`)
+          fetch(`${this.baseUrl}/api/competencies/${comp.number}/indicators`)
         );
         
         const responses = await Promise.all(promises);
@@ -113,7 +114,7 @@ export default {
     
     async submitForm() {
       try {
-        const url = '/api/rpd';
+        const url = `${this.baseUrl}/api/rpd`;
         const res = await fetch(url, {
           method: 'POST',
           headers: {
