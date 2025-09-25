@@ -12,7 +12,7 @@ RUN npm install
 COPY . .
 
 # Set the environment variable for the build
-ARG VITE_API_BASE_URL=http://194.135.20.4:8080
+ARG VITE_API_BASE_URL=/api
 ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 
 # Build the app

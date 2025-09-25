@@ -76,7 +76,7 @@ export default {
     async fetchRPD() {
       try {
         const id = this.$route.params.id; // Get ID from route
-        const url = `${this.baseUrl}/api/rpd/${id}`;
+        const url = `${this.baseUrl}/rpd/${id}`;
         const res = await fetch(url);
         
         if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
@@ -95,7 +95,7 @@ export default {
     
     async fetchCompetencies() {
       try {
-        const url = `${this.baseUrl}/api/competencies`;
+        const url = `${this.baseUrl}/competencies`;
         const res = await fetch(url);
         
         if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
@@ -111,7 +111,7 @@ export default {
       try {
         // Fetch indicators for all competencies
         const promises = this.competencies.map(comp => 
-          fetch(`${this.baseUrl}/api/competencies/${comp.number}/indicators`)
+          fetch(`${this.baseUrl}/competencies/${comp.number}/indicators`)
         );
         
         const responses = await Promise.all(promises);
@@ -136,7 +136,7 @@ export default {
     async submitForm() {
       try {
         const id = this.$route.params.id; // Get ID from route
-        const url = `${this.baseUrl}/api/rpd/${id}`;
+        const url = `${this.baseUrl}/rpd/${id}`;
         const res = await fetch(url, {
           method: 'PUT',
           headers: {
