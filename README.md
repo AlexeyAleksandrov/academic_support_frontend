@@ -57,6 +57,14 @@ services:
       - "80:80"
 ```
 
+## Deployment
+
+The project is automatically deployed to GitHub Pages when changes are pushed to the `main` branch. 
+
+To deploy manually:
+1. Run `npm run build`
+2. Push the `dist` folder to the `gh-pages` branch
+
 ## Development
 
 ### Recommended IDE Setup
