@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/academic_support_frontend/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/academic_support_frontend/' : '/academic_support_frontend/',
   plugins: [
     vue(),
     vueDevTools(),
