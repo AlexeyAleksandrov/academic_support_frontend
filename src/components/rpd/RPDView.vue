@@ -58,7 +58,12 @@ export default {
   methods: {
     async fetchRPDs() {
       try {
-        const url = '/api/rpd';
+        const baseUrl = import.meta.env.PROD
+          ? window.location.protocol === 'https:'
+            ? 'https://194.135.20.4:8080'
+            : 'http://194.135.20.4:8080'
+          : '';
+        const url = `${baseUrl}/api/rpd`;
         console.log('Fetching RPDs from:', url);
         
         const res = await fetch(url);
